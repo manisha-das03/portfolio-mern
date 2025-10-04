@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import Navbar from './components/Navbar';
+import Navbar from './components/SimpleNavbar';
 import Home from './pages/SimpleHome';
-import Projects from './pages/Projects';
-import Admin from './pages/Admin';
-import { AuthProvider } from './context/AuthContext';
+import Projects from './pages/SimpleProjects';
+import Admin from './pages/SimpleAdmin';
+import { AuthProvider } from './context/SimpleAuthContext';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
