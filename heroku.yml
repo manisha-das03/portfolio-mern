@@ -1,5 +1,5 @@
 build:
-  docker:
-    web: server/Dockerfile
+  languages:
+    - nodejs
 run:
   web: cd server && npm start
