@@ -2,14 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Helmet } from 'react-helmet';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
+import Home from './pages/SimpleHome';
 import Projects from './pages/Projects';
 import Admin from './pages/Admin';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Blog from './pages/Blog';
 import { AuthProvider } from './context/AuthContext';
 
 function App() {
@@ -75,25 +71,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Helmet>
-        <title>Portfolio - Full Stack Developer</title>
-        <meta name="description" content="Professional portfolio showcasing full-stack development projects and skills" />
-        <meta name="keywords" content="developer, portfolio, react, node.js, mongodb, full-stack" />
-        <meta name="author" content="Your Name" />
-        <meta property="og:title" content="Portfolio - Full Stack Developer" />
-        <meta property="og:description" content="Professional portfolio showcasing full-stack development projects and skills" />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://yourportfolio.com" />
-      </Helmet>
       <AuthProvider>
         <Router>
           <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
         </Router>
